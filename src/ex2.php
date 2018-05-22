@@ -32,7 +32,7 @@
           <h3>You can click on a button with the following code.</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.screenshot({ path: 'output/screenshot1.png', fullPage: true })
+    await page.click('#modalButton');
           </code></pre>
           </div>
         </div>

@@ -9,12 +9,12 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/mystyle.css" rel="stylesheet">
 
-    <title>Hello Madison</title>
+    <title>Goedemiddag Amsterdam</title>
 	</head>
 	<body>
 		<?php include 'includes/nav.php'; ?>
 		<main class="container">
-			<h1>Hello Madison</h1>
+			<h1>Goedemiddag Amsterdam</h1>
 		  <!-- Content here -->
 		  <div class="row">
         <div class="col-md-6">
@@ -24,7 +24,7 @@
           <div  style="background: #eee">
           <pre><code>
     it('should have the correct page title', async function () {
-      expect(await page.title()).to.eql('Hello Madison');
+      expect(await page.title()).to.eql('Goedemiddag Amsterdam');
     });
           </code></pre>
           </div>
