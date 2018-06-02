@@ -14,47 +14,37 @@
 	<body>
 		<?php include 'includes/nav2.php'; ?>
 		<main class="container">
-			<h1>Exercise 5</h1>
+			<h1>Exercise 9</h1>
 		  <!-- Content here -->
 		  <div class="row">
 		    <div class="col-md-4">
-		    	This page has the search function working. If you type into the search box you
-          will get a list of five random words as the search results.
-
+		    	This page uses <a href="https://getbootstrap.com/docs/3.3/css/">Bootstrap's</a> responsive design.
+          This means our layout will adjust as the size of our viewport changes. We detected
+          that your user agent is <span id='user-agent'><?= $_SERVER['HTTP_USER_AGENT'] ?></span>.
           <ol data-bind="foreach: {data: results, as: 'result'}" id="resultsList">
             <li class="resultItem"><span data-bind="text: result"></span></li>
           </ol>
+          <button id="clearListButton" class="btn btn-secondary" data-bind="click: clearList">Clear Search</button>
 		    </div>
 		    <div class="col-md-8">
           <h2>Helpful Hints</h2>
-          <h3>You can type text in an input field.</h3>
+          <h3>You can emulate any device listed in <a href="https://github.com/GoogleChrome/puppeteer/blob/eb1826bc4972d527bed2a0f5f4e351df330114cd/DeviceDescriptors.js" target="_blank">deviceDescriptors.js</a>.</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.type('input[name=fieldName]', 'I want to search for this');
+  const devices = require('puppeteer/DeviceDescriptors');
+  ...
+  page.emulate(devices['iPhone X']);
           </code></pre>
           </div>
-         <h3>You can click a button.</h3>
+         <h3>You can check the content of the user-agent span in this page like this.</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.click('#buttonId');
-          </code></pre>
-          </div>
-          <h3>You can get all elements in a list.</h3>
-          <div style="background: #eee">
-          <pre><code>
-    await page.evaluate(() => document.querySelectorAll('li.className'));
+  const userAgent = await page.evaluate(() => document.querySelector('#user-agent').innerText);
+  expect(userAgent).to.contains('iPhone');
           </code></pre>
           </div>
         </div>
 		  </div>
-      <div class="row">
-        <div class="col-md-12">
-           As an extra challenge let's test write a test for the case of no input. This should 
-           not return a list but right now it does. If you're feeling bold with your JS skills
-           try to fix it and get that test to pass.
-        </div>
-      </div>
-		  
 		</main>
 
 		<script src="/js/jquery-3.2.1.slim.min.js"></script>

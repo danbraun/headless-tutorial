@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+  header('Location: ex10.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,22 +18,22 @@
     <title>Goedemiddag Amsterdam</title>
 	</head>
 	<body>
-		<?php include 'includes/nav.php'; ?>
+		<?php include 'includes/nav2.php'; ?>
 		<main class="container">
-			<h1>Exercise 7</h1>
+			<h1>Exercise 10</h1>
 		  <!-- Content here -->
 		  <div class="row">
-		    <div class="col-md-6">
-		    	One argument for this type of testing is fearless refactoring and upgrading. So, 
-		    	take a look at our webroot (src). There is an advanced folder. This seems like
-		    	some old code that somebody forgot to delete.  Is it? try removing or renaming
-		    	it and rerunning our tests. If they still pass we can feel good about deletion.
+		    <div class="col-md-4">
+		    	You are logged in as <span id="user-name"><?= $_SESSION['user'] ?></span>
+          <br/><a href="/ex10-logout.php">Logout</a>
 		    </div>
-		  
+		  </div>
 		</main>
 
 		<script src="/js/jquery-3.2.1.slim.min.js"></script>
 <script src="/js/popper.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src='/js/knockout-3.4.2.js'></script>
+    <script type='text/javascript' src='/js/headless.js'></script>
 	</body>
 </html>

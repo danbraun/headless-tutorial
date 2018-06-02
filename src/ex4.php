@@ -9,7 +9,7 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/mystyle.css" rel="stylesheet">
 
-    <title>Hello Madison</title>
+    <title>Goedemiddag Amsterdam</title>
 	</head>
 	<body>
 		<?php include 'includes/nav.php'; ?>
@@ -32,7 +32,7 @@
           <h3>You can print a pdf like this.</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.pdf();
+    await page.pdf({path: 'output/page1.pdf'});
           </code></pre>
           </div>
           A full list of page printing options are available at <a href="https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pagepdfoptions" target="_blank">Puppeteer's API docs</a>.

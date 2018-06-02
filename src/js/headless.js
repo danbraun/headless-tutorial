@@ -78,7 +78,14 @@ var ViewModel = function() {
             'quarrel',
             'question',
             'quit',
-            'queen'
+            'queen',
+            'aardig',
+            'fietsenrek',
+            'vernieuwen',
+            'minibieb',
+            'lenen',
+            'ruilen',
+            'tekeergaan'
     		];
 
     	var index = Math.floor(Math.random() * words.length);
@@ -87,4 +94,5 @@ var ViewModel = function() {
 	}
 }
 
-ko.applyBindings(new ViewModel());
+var myModel = new ViewModel()
+ko.applyBindings(myModel);

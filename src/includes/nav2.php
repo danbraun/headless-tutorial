@@ -20,6 +20,8 @@
               <a class="dropdown-item" href="ex7.php">Exercise 7</a>
               <a class="dropdown-item" href="ex8.php">Exercise 8</a>
               <a class="dropdown-item" href="ex9.php">Exercise 9</a>
+              <a class="dropdown-item" href="ex10.php">Exercise 10</a>
+
             </div>
           </li>
         </ul>

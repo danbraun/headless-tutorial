@@ -14,47 +14,47 @@
 	<body>
 		<?php include 'includes/nav2.php'; ?>
 		<main class="container">
-			<h1>Exercise 5</h1>
+			<h1>Exercise 10</h1>
 		  <!-- Content here -->
 		  <div class="row">
 		    <div class="col-md-4">
-		    	This page has the search function working. If you type into the search box you
-          will get a list of five random words as the search results.
+		    	This page let's you login and see your account.
+          <?php if (!empty($_GET['message'])) {
+            echo '<div id="user-message" class="alert alert-warning" role="alert">';
+            echo $_GET['message'];
+            echo '</div>';
+          }
+          ?>
+          <form method="post" action="/ex10-login.php">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+          </div>
 
-          <ol data-bind="foreach: {data: results, as: 'result'}" id="resultsList">
-            <li class="resultItem"><span data-bind="text: result"></span></li>
-          </ol>
+          <button type="submit" class="btn btn-primary" id="login">Login</button>
+        </form>
 		    </div>
 		    <div class="col-md-8">
           <h2>Helpful Hints</h2>
-          <h3>You can type text in an input field.</h3>
+          <h3>You can wait for page load after submitting a form</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.type('input[name=fieldName]', 'I want to search for this');
+  await page.waitForNavigation({waitUntil: 'load'});
           </code></pre>
           </div>
-         <h3>You can click a button.</h3>
+         <h3>You can check the URL of your current page.</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.click('#buttonId');
-          </code></pre>
-          </div>
-          <h3>You can get all elements in a list.</h3>
-          <div style="background: #eee">
-          <pre><code>
-    await page.evaluate(() => document.querySelectorAll('li.className'));
+  page.url()
           </code></pre>
           </div>
         </div>
 		  </div>
-      <div class="row">
-        <div class="col-md-12">
-           As an extra challenge let's test write a test for the case of no input. This should 
-           not return a list but right now it does. If you're feeling bold with your JS skills
-           try to fix it and get that test to pass.
-        </div>
-      </div>
-		  
 		</main>
 
 		<script src="/js/jquery-3.2.1.slim.min.js"></script>

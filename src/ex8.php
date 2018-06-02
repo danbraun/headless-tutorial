@@ -14,47 +14,34 @@
 	<body>
 		<?php include 'includes/nav2.php'; ?>
 		<main class="container">
-			<h1>Exercise 5</h1>
+			<h1>Exercise 8</h1>
 		  <!-- Content here -->
 		  <div class="row">
 		    <div class="col-md-4">
-		    	This page has the search function working. If you type into the search box you
-          will get a list of five random words as the search results.
-
+		    	This page uses <a href="https://getbootstrap.com/docs/3.3/css/">Bootstrap's</a> responsive design.
+          This means our layout will adjust as the size of our viewport changes. For this exercise 
+          we will take screenshots of our page in different layouts.
           <ol data-bind="foreach: {data: results, as: 'result'}" id="resultsList">
             <li class="resultItem"><span data-bind="text: result"></span></li>
           </ol>
+          <button id="clearListButton" class="btn btn-secondary" data-bind="click: clearList">Clear Search</button>
 		    </div>
 		    <div class="col-md-8">
           <h2>Helpful Hints</h2>
-          <h3>You can type text in an input field.</h3>
+          <h3>You can change the viewport.</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.type('input[name=fieldName]', 'I want to search for this');
+    await page.setViewport({width: 1200, height: 800, deviceScaleFactor: 1});
           </code></pre>
           </div>
-         <h3>You can click a button.</h3>
+         <h3>You can zoom in by setting deviceScaleFactor higher than 1.</h3>
           <div style="background: #eee">
           <pre><code>
-    await page.click('#buttonId');
-          </code></pre>
-          </div>
-          <h3>You can get all elements in a list.</h3>
-          <div style="background: #eee">
-          <pre><code>
-    await page.evaluate(() => document.querySelectorAll('li.className'));
+        await page.setViewport({width: 1200, height: 800, deviceScaleFactor: 3});
           </code></pre>
           </div>
         </div>
 		  </div>
-      <div class="row">
-        <div class="col-md-12">
-           As an extra challenge let's test write a test for the case of no input. This should 
-           not return a list but right now it does. If you're feeling bold with your JS skills
-           try to fix it and get that test to pass.
-        </div>
-      </div>
-		  
 		</main>
 
 		<script src="/js/jquery-3.2.1.slim.min.js"></script>

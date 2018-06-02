@@ -9,7 +9,7 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/mystyle.css" rel="stylesheet">
 
-    <title>Hello Madison</title>
+    <title>Goedemiddag Amsterdam</title>
 	</head>
 	<body>
 		<?php include 'includes/nav2.php'; ?>
@@ -40,7 +40,7 @@
           <pre><code>
     await page.evaluate(() => {
       const button = document.querySelector('#idSelector');
-      return getComputedStyle(button).getPropertyValue("css-property");;
+      return getComputedStyle(button).getPropertyValue("css-property");
     });
           </code></pre>
           </div>

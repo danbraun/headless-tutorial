@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+ const puppeteer = require('puppeteer');
 const { expect } = require('chai');
 
 describe('Test Page One', function() {
@@ -14,7 +14,7 @@ describe('Test Page One', function() {
 
 	it('should have the correct page title', async function () {
 	    expect(await page.title()).to.eql('Goedemiddag Amsterdam');
-	 });
+	});
 
 	after (async function () {
 	    await browser.close();
